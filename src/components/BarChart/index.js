@@ -1,7 +1,7 @@
 import React from 'react';
 
-import bars from './barValues';
 import { Container, Bar } from './styled';
+import bars from './barValues';
 
 function BarChart() {
   return (

@@ -46,7 +46,7 @@ export const Bar = styled.div`
   justify-content: flex-end;
 
   & + div {
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
   .plans {
@@ -59,12 +59,12 @@ export const Bar = styled.div`
     line-height: 1.2;
 
     h3 {
-      font-size: 44px;
+      font-size: 38px;
       font-weight: 600;
     }
 
     h4 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
     }
   }
@@ -72,28 +72,28 @@ export const Bar = styled.div`
   .progress {
     height: ${(props) => props.height}px;
     background-color: #3891ff;
-    animation: upBar 0.5s linear forwards;
+    animation: slideUp 0.6s linear forwards;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     color: #fff;
     font-weight: 700;
 
+    @keyframes slideUp {
+      0% {
+        height: 0px;
+      }
+
+      100% {
+        max-height: ${(props) => props.height}px;
+      }
+    }
+
     p {
       margin: 0;
       padding: 0 16px 16px;
       font-size: 13px;
       font-weight: 600;
-    }
-
-    @keyframes upBar {
-      from {
-        height: 0px;
-      }
-
-      to {
-        max-height: ${(props) => props.height}px;
-      }
     }
   }
 `;

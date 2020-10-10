@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 import cover from '../../assets/cover.png';
 
@@ -34,5 +35,10 @@ export const Container = styled.div`
     font-weight: 600;
     color: #373737;
     border: none;
+    transition: background 0.4s;
+
+    &:hover {
+      background: ${darken(0.09, '#fff')};
+    }
   }
 `;

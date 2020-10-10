@@ -6,14 +6,14 @@ import GlobalStyles from './styles/global';
 import history from './services/history';
 
 function App() {
-  return(
-  <>
-    <Router history={history}>
-      <Routes />
-      <GlobalStyles />
-    </Router>
-  </>
-  )
+  return (
+    <>
+      <Router history={history}>
+        <Routes />
+        <GlobalStyles />
+      </Router>
+    </>
+  );
 }
 
 export default App;
