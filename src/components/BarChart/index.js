@@ -12,7 +12,7 @@ function BarChart() {
           <small>take your business to the next level</small>
         </div>
         {bars.map((bar) => (
-          <Bar height={bar.sizebar}>
+          <Bar height={bar.sizebar} key={bar.cost}>
             <div className="plans">
               <h3>{bar.cost}</h3>
               <h4>{bar.hours}</h4>

@@ -35,10 +35,11 @@ export const Container = styled.div`
     font-weight: 600;
     color: #373737;
     border: none;
-    transition: background 0.4s;
+    transition: all 0.4s;
 
     &:hover {
       background: ${darken(0.09, '#fff')};
+      transform: scale(0.9);
     }
   }
 `;
