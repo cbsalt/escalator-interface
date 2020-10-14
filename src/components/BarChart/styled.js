@@ -1,31 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.section`
   overflow: hidden;
   padding: 48px;
 
-  div {
-    display: flex;
-    flex-direction: column;
-    color: #373737;
-    display: flex;
-
-    strong {
-      font-size: 48px;
-      font-weight: 600;
-    }
-
-    small {
-      font-size: 17px;
-      font-weight: 600;
-    }
-  }
-
   .wrapper-bars {
+    display: flex;
     flex: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     height: 500px;
     position: relative;
     width: 100%;
@@ -35,12 +19,24 @@ export const Container = styled.section`
       position: absolute;
       top: 0;
       left: 0;
+      color: #373737;
+
+      strong {
+        font-size: 48px;
+        font-weight: 600;
+        display: block;
+      }
+
+      small {
+        font-size: 17px;
+        font-weight: 600;
+      }
     }
   }
 `;
 
 export const Bar = styled.div`
-  width: 14.125rem;
+  width: 226px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -50,13 +46,18 @@ export const Bar = styled.div`
   }
 
   .plans {
-    height: 8.125rem;
+    height: 130px;
     background-color: #0a54e8;
     padding-left: 16px;
     color: #fff;
     font-weight: 600;
     justify-content: center;
+    flex-direction: column;
     line-height: 1.2;
+    display: flex;
+    opacity: 0;
+    position: relative;
+    top: -30px;
 
     h3 {
       font-size: 38px;
@@ -71,23 +72,13 @@ export const Bar = styled.div`
 
   .progress {
     height: ${(props) => props.height}px;
+    max-height: 0px;
     background-color: #3891ff;
-    animation: slideUp 0.6s linear forwards;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     color: #fff;
     font-weight: 700;
-
-    @keyframes slideUp {
-      0% {
-        height: 0px;
-      }
-
-      100% {
-        max-height: ${(props) => props.height}px;
-      }
-    }
 
     p {
       margin: 0;
@@ -95,5 +86,51 @@ export const Bar = styled.div`
       font-size: 13px;
       font-weight: 600;
     }
+  }
+
+  @keyframes slideUp {
+    0% {
+      max-height: 0px;
+    }
+
+    100% {
+      max-height: ${(props) => props.height}px;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: -30px;
+    }
+
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+`;
+
+export const WrapperBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+
+  .progress {
+    ${(props) =>
+      props.animate &&
+      css`
+        animation: slideUp 0.95s linear forwards;
+      `}
+  }
+
+  .plans {
+    ${(props) =>
+      props.animate &&
+      css`
+        animation: fadeIn 0.25s linear forwards 1s;
+      `}
   }
 `;

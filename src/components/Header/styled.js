@@ -28,8 +28,8 @@ export const Container = styled.div`
   }
 
   button {
-    width: 19rem;
-    height: 4rem;
+    width: 304px;
+    height: 64px;
     background: #fff;
     font-size: 20px;
     font-weight: 600;

@@ -31,7 +31,7 @@ export const WrapperContent = styled.div`
   margin-top: 40px;
 
   > div {
-    height: 19.825rem;
+    height: 318px;
     background-color: #fff;
     display: flex;
     flex-direction: row;
