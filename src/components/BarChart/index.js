@@ -29,7 +29,6 @@ function BarChart() {
           <strong>growth plans</strong>
           <small>take your business to the next level</small>
         </div>
-
         <WrapperBar ref={progressElement} animate={animate}>
           {bars.map((bar) => (
             <Bar height={bar.sizebar} key={bar.cost}>

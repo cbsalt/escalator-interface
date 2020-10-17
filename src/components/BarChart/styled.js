@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.section`
   overflow: hidden;
-  padding: 48px;
+  padding: 20px;
 
   .wrapper-bars {
     display: flex;
@@ -22,13 +22,13 @@ export const Container = styled.section`
       color: #373737;
 
       strong {
-        font-size: 48px;
+        font-size: 44px;
         font-weight: 600;
         display: block;
       }
 
       small {
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 600;
       }
     }
@@ -36,13 +36,21 @@ export const Container = styled.section`
 `;
 
 export const Bar = styled.div`
-  width: 226px;
+  width: 44px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
   & + div {
-    margin-left: 30px;
+    margin-left: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+
+    & + div {
+      margin-left: 30px;
+    }
   }
 
   .plans {
@@ -59,14 +67,16 @@ export const Bar = styled.div`
     position: relative;
     top: -30px;
 
-    h3 {
-      font-size: 38px;
-      font-weight: 600;
-    }
+    @media screen and (min-width: 768px) {
+      h3 {
+        font-size: 38px;
+        font-weight: 600;
+      }
 
-    h4 {
-      font-size: 22px;
-      font-weight: 600;
+      h4 {
+        font-size: 22px;
+        font-weight: 600;
+      }
     }
   }
 
@@ -81,10 +91,17 @@ export const Bar = styled.div`
     font-weight: 700;
 
     p {
-      margin: 0;
-      padding: 0 16px 16px;
-      font-size: 13px;
-      font-weight: 600;
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      p {
+        display: flex;
+        margin: 0;
+        padding: 0 16px 16px;
+        font-size: 13px;
+        font-weight: 600;
+      }
     }
   }
 
@@ -126,11 +143,13 @@ export const WrapperBar = styled.div`
       `}
   }
 
-  .plans {
-    ${(props) =>
-      props.animate &&
-      css`
-        animation: fadeIn 0.25s linear forwards 1s;
-      `}
+  @media screen and (min-width: 768px) {
+    .plans {
+      ${(props) =>
+        props.animate &&
+        css`
+          animation: fadeIn 0.25s linear forwards 1s;
+        `}
+    }
   }
 `;

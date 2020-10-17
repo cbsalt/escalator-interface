@@ -7,18 +7,18 @@ import analysis from '../../assets/analysis.png';
 import pictures from '../../assets/pictures.png';
 
 export const Container = styled.div`
-  padding: 48px;
+  padding: 20px;
   max-width: 1450px;
   margin: auto;
 
   header {
     color: #373737;
     h2 {
-      font-size: 48px;
+      font-size: 44px;
       font-weight: 600;
     }
     h3 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 600;
     }
   }
@@ -31,20 +31,25 @@ export const WrapperContent = styled.div`
   margin-top: 40px;
 
   > div {
-    height: 318px;
     background-color: #fff;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      height: 380px;
+    }
 
     div {
       position: relative;
+      padding: 20px;
 
       p {
-        margin: 20px 0px 0px 32px;
+        margin: 0;
         color: #fff;
 
         strong {
-          font-size: 48px;
+          font-size: 44px;
           font-weight: 600;
           display: block;
         }
@@ -53,6 +58,16 @@ export const WrapperContent = styled.div`
           font-size: 18px;
           font-weight: 600;
           display: block;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 38px;
+
+        &:hover {
+          transform: scale(1.02);
+          transition: 0.25s;
+          cursor: pointer;
         }
       }
     }
@@ -64,76 +79,70 @@ export const WrapperContent = styled.div`
     &.first-line {
       #nature {
         background: url(${nature}) no-repeat center top;
-        background-size: 100% auto;
+        background-size: cover;
 
-        width: 30%;
-        margin-right: 20px;
-        transition: all 0.25s ease-out;
-
-        &:hover {
-          background-size: 110% auto;
-          cursor: pointer;
+        @media screen and (min-width: 768px) {
+          width: 30%;
+          margin-right: 20px;
         }
       }
 
       #daily {
         background: url(${daily}) no-repeat center top;
-        background-size: 100% auto;
-        width: 70%;
-        transition: all 0.25s ease-out;
+        background-size: cover;
+        margin-top: 20px;
 
-        &:hover {
-          background-size: 110% auto;
-          cursor: pointer;
+        @media screen and (min-width: 768px) {
+          width: 70%;
+          margin-top: 0;
         }
       }
     }
 
     &.second-line {
-      align-items: center;
-      background: url(${together}) no-repeat center top;
-      background-size: 100% auto;
-      transition: all 0.25s ease-out;
+      #together {
+        background: url(${together}) no-repeat center top;
+        background-size: cover;
 
-      &:hover {
-        background-size: 110% auto;
-        cursor: pointer;
-      }
+        p {
+          margin-top: 0px;
+        }
 
-      p {
-        margin-top: 0px;
+        @media screen and (min-width: 768px) {
+          width: 100%;
+
+          p {
+            position: relative;
+            top: 100px;
+          }
+        }
       }
     }
 
-    &.three-line {
+    &.third-line {
       #analysis {
         background: url(${analysis}) no-repeat center center;
-        background-size: 100% auto;
-        width: 70%;
-        transition: all 0.25s ease-out;
+        background-size: cover;
 
-        &:hover {
-          background-size: 110% auto;
-          cursor: pointer;
-        }
+        @media screen and (min-width: 768px) {
+          width: 70%;
 
-        p {
-          text-align: right;
-          margin-right: 20px;
-          margin-left: 0px;
+          p {
+            text-align: right;
+          }
         }
       }
 
       #pictures {
         background: url(${pictures}) no-repeat center top;
-        background-size: 100% auto;
-        width: 30%;
-        margin-left: 20px;
-        transition: all 0.25s ease-out;
+        background-size: cover;
+        margin-left: 0;
+        margin-top: 20px;
 
-        &:hover {
-          background-size: 110% auto;
-          cursor: pointer;
+        @media screen and (min-width: 768px) {
+          width: 30%;
+          margin-left: 20px;
+          margin-top: 0;
         }
       }
     }
