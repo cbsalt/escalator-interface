@@ -11,10 +11,10 @@ export const Container = styled.div`
   background-size: cover;
   position: relative;
   text-align: center;
-  height: 800px;
+  height: 700px;
   align-items: center;
   overflow: hidden;
-  padding: 98px 0;
+  padding: 64px 0;
 
   img {
     height: 152px;
@@ -22,14 +22,14 @@ export const Container = styled.div`
 
   h1 {
     line-height: 1.4;
-    font-size: 76px;
+    font-size: 40px;
     color: #fff;
     font-weight: 600;
   }
 
   button {
-    width: 304px;
-    height: 64px;
+    width: 240px;
+    height: 54px;
     background: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -40,6 +40,22 @@ export const Container = styled.div`
     &:hover {
       background: ${darken(0.09, '#fff')};
       transform: scale(0.9);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 800px;
+    padding: 98px 0;
+    h1 {
+      line-height: 1.4;
+      font-size: 76px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    button {
+      width: 304px;
+      height: 64px;
     }
   }
 `;
